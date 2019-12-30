@@ -10,7 +10,7 @@
   <link rel="icon" href="./assets/images/favicon.ico" type="image/ico" />
 
   <title><?php echo $title; ?></title>
-
+  <link href="<?php echo base_url().'assets/css/jquery.dataTables.min.css'?>" rel="stylesheet">
   <!-- Bootstrap -->
   <link href="<?= base_url('assets/'); ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -71,9 +71,9 @@
                 <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
                 <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
                 <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
-                <li><a><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
-                <li><a><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
-                <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                <li><a href="<?php echo base_url('index.php/list_proposal')?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
+                <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi')?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
+                <li><a href="<?php echo base_url('index.php/acc_pembimbing')?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
                 <li><a><i class="fa fa-calendar"></i>Jadwal Seminar</a></li>
                 <li><a><i class="fa fa-sign-in"></i>Daftar Ujian</a></li>
                 <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
@@ -189,7 +189,15 @@
   <!-- Custom Theme Scripts -->
   <!-- <script src="./build/js/custom.min.js"></script> -->
   <script src="<?= base_url('assets/'); ?>build/js/custom.min.js"></script>
-
+  <script src="<?php echo base_url().'assets/js/jquery-2.2.4.min.js'?>"></script>
+<script src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
+<script src="<?php echo base_url().'assets/js/jquery.dataTables.min.js'?>"></script>
+<script src="<?php echo base_url().'assets/js/moment.js'?>"></script>
+<script>
+	$(document).ready(function(){
+		$('#mydata').DataTable();
+	});
+</script>
 </body>
 
 </html>

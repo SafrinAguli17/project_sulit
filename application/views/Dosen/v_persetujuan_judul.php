@@ -20,21 +20,29 @@
                                     <th>NAMA</th>
                                     <th>EMAIL</th>
                                     <th>JUDUL SKRIPSI</th>
+                                    <th>DRAFT JUDUL</th>
+                                    <th>PERSETUJUAN</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                foreach ($list_daftar->result_array() as $i) :
+                                foreach ($persetujuan_judul->result_array() as $i) :
                                     $npm = $i['nim'];
                                     $nama = $i['nama'];
                                     $email = $i['email'];
                                     $judul = $i['judul_skripsi'];
+                                    $draf = $i['draf'];
                                 ?>
                                     <tr>
                                         <td><?php echo $npm; ?></td>
                                         <td><?php echo $nama; ?></td>
                                         <td><?php echo $email; ?></td>
                                         <td><?php echo $judul; ?></td>
+                                        <td><?php echo $draf; ?></td>
+                                        <td>
+                                            <input type="radio" value="SETUJU" name="pilihan">SETUJU
+                                            <input type="radio" value="TOLAK" name="pilihan">TOLAK
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

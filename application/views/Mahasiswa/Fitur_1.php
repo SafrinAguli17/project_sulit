@@ -1,131 +1,75 @@
-<div class="right_col" role="main" style="min-height: 1164px;">
+<div class="right_col" role="main" style="min-height: 4019px;">
     <div class="">
         <div class="page-title">
 
 
-
         </div>
         <div class="clearfix"></div>
-
         <div class="row">
-
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>PENDAFTARAN SKRIPSI <small>JUDUL</small></h2>
-
+                        <h2>DAFTAR JUDUL SKRIPSI <small>Silahkan Mengisi Form di Bawah</small></h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
+                        <br>
+                        <form class="form-horizontal form-label-left" method="post" action="<?= base_url('index.php/main/fitur_1'); ?>">
 
-
-                        <!-- Smart Wizard -->
-                        <p>Silahkan Ikuti Langkah Langkahnya..</p>
-                        <div id="wizard" class="form_wizard wizard_horizontal">
-                            <ul class="wizard_steps anchor">
-                                <li>
-                                    <a href="#step-1" class="selected" isdone="1" rel="1">
-                                        <span class="step_no">1</span>
-                                        <span class="step_descr">
-                                            Step 1<br>
-                                            <small>Cek NIM Kalian</small>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#step-2" class="disabled" isdone="0" rel="2">
-                                        <span class="step_no">2</span>
-                                        <span class="step_descr">
-                                            Step 2<br>
-                                            <small>Daftarkan Judul Kalian</small>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#step-3" class="disabled" isdone="0" rel="3">
-                                        <span class="step_no">3</span>
-                                        <span class="step_descr">
-                                            Step 3<br>
-                                            <small>Verifikasi Akun Pendaftar</small>
-                                        </span>
-                                    </a>
-                                </li>
-
-                            </ul>
-
-
-
-
-
-                            <div class="stepContainer" style="height: 287px;">
-                                <div id="step-1" class="content" style="display: block;">
-                                    <form class="form-horizontal form-label-left">
-
-                                        <div class="form-group row">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">MASUKKAN NIM <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" id="nim" name="nim" required="required" class="form-control  ">
-                                            </div>
-                                        </div>
-                                        <center><button type="submit" class="btn btn-secondary btn-lg">CEK NIM</button></center>
-                                    </form>
-
-                                </div>
-                                <div id="step-2" class="content" style="display: none;">
-                                    <h2 class="StepTitle">Step 2 Content</h2>
-                                    <p>
-                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div id="step-3" class="content" style="display: none;">
-                                    <h2 class="StepTitle">Step 3 Content</h2>
-                                    <p>
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div id="step-4" class="content" style="display: none;">
-                                    <h2 class="StepTitle">Step 4 Content</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">NIM </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <!-- <input type="text" id="first-name" required="required" class="form-control "> -->
+                                    <input type="text" class="form-control" id="nim" name="nim" placeholder="NIM MAHASISWA">
                                 </div>
                             </div>
-                            <div class="actionBar">
-                                <div class="msgBox">
-                                    <div class="content"></div><a href="#" class="close">X</a>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NAMA LENGKAP </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input type="text" id="nama" name="nama" class="form-control">
+                                    <?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
                                 </div>
-                                <div class="loader">Loading</div><a href="#" class="buttonFinish buttonDisabled btn btn-default">Finish</a><a href="#" class="buttonNext btn btn-success">Next</a><a href="#" class="buttonPrevious buttonDisabled btn btn-primary">Previous</a>
                             </div>
-                        </div>
-                        <!-- End SmartWizard Content -->
-
-
-
-
-
-
+                            <div class="item form-group">
+                                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">EMAIL AKTIF</label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input id="email_1" name="email_1" class="form-control" type="email">
+                                    <?= form_error('email_1', '<small class="text-danger pl-3">', '</small>') ?>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NO HP/TELEPHONE </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input type="text" id="hp" name="hp" class="form-control">
+                                    <?= form_error('hp', '<small class="text-danger pl-3">', '</small>') ?>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL SKRIPSI </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <!-- <input type="text" id="judul" name="judul" required="required" class="form-control"> -->
+                                    <textarea class="form-control" id="judul" name="judul" rows="3" placeholder="Tulis Judul Skripsi Disini"></textarea>
+                                    <?= form_error('judul', '<small class="text-danger pl-3">', '</small>') ?>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">DRAFT PROPOSAL SKRIPSI</label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input type="file" id="draf" name="draf">
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="item form-group">
+                                <div class="col-md-6 col-sm-6 offset-md-3">
+                                    <button class="btn btn-primary" type="reset">Reset</button>
+                                    <button type="submit" class="btn btn-success">Ajukan Judul</button>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>

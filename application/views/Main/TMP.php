@@ -77,10 +77,9 @@
                 <li><a><i class="fa fa-calendar"></i>Jadwal Seminar</a></li>
                 <li><a><i class="fa fa-sign-in"></i>Daftar Ujian</a></li>
                 <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
-                <li><a><i class="fa fa-users"></i>Set Penguji</a></li>
-                <li><a><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
+                <li><a href="<?= base_url('index.php/set_penguji')?>"><i class="fa fa-check"></i>Set Penguji</a></li>
+                <li><a href="<?= base_url('index.php/set_penguji/jadwal_ujian')?>"><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
                 <li><a><i class="fa fa-book"></i>Hasil Ujian</a></li>
-
             </div>
 
           </div>

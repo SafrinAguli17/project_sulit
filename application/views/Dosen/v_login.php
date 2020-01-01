@@ -31,16 +31,16 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                    <form method="post" action="<?= base_url('index.php/main/dosen'); ?>">
+                <?php echo form_open('index.php/login/login_app');?>
                         <h1>Login Dosen</h1>
                         <div>
-                            <?= form_error('email', '<small class="text-danger pl-3">', '</small>') ?>
-                            <input type="text" class="form-control" placeholder="Username" id="email" name="email">
+                            <?= form_error('username', '<small class="text-danger pl-3">', '</small>') ?>
+                            <input type="text" class="form-control" placeholder="Username" id="username" name="username">
 
                         </div>
                         <div>
-                            <?= form_error('pass', '<small class="text-danger pl-3">', '</small>') ?>
-                            <input type="password" class="form-control" placeholder="Password" id="pass" name="pass" />
+                            <?= form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
+                            <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
 
                         </div>
                         <div>
@@ -49,7 +49,7 @@
                             </button>
                             <a class="btn btn-primary btn-user btn-block" style="text-decoration: none; text-shadow: none;" href="<?= base_url('') ?>">Back Dasboard</a>
                         </div>
-                    </form>
+                    <?php echo form_close()?>
                 </section>
             </div>
 

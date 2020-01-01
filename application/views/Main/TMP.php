@@ -63,7 +63,10 @@
               <ul class="nav side-menu">
                 <li><a href="<?= base_url() ?>"><i class="fa fa-home"></i>Beranda</a></li>
                 <li><a href="<?= base_url('index.php/main/fitur_1') ?>"><i class="fa fa-edit"></i>Daftar Judul</a></li>
-                <li><a href="<?= base_url('index.php/main/fitur_2') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
+                <?php
+                if ($this->session->userdata('level')=='Admin') {
+                  ?>                  
+                  <li><a href="<?= base_url('index.php/main/fitur_2') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
                 <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
                 <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
                 <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
@@ -80,6 +83,7 @@
                 <li><a href="<?= base_url('index.php/set_penguji')?>"><i class="fa fa-check"></i>Set Penguji</a></li>
                 <li><a href="<?= base_url('index.php/set_penguji/jadwal_ujian')?>"><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
                 <li><a><i class="fa fa-book"></i>Hasil Ujian</a></li>
+                <?php }?>
             </div>
 
           </div>
@@ -112,19 +116,15 @@
           </div>
           <nav class="nav navbar-nav">
             <ul class=" navbar-right">
-              <li class="nav-item dropdown open" style="padding-left: 15px;">
-                <input style="border-radius: 3px; border: none; height: 23px;" type="text" placeholder="Masukkan Username">
-                <input style="border-radius: 3px; border: none; height: 23px;" type="password" placeholder="Masukkan Password">
-
-                <input style="border-radius: 4px; border: none; height: 23px; color: white; background: #2A3F54;" type="button" value="LOGIN">
-                <a href="<?= base_url('index.php/main/dosen') ?>"><input style="border-radius: 3px; border: none; height: 23px; color: white; background: #2A3F54;" type="button" value="DOSEN"></a>
+              <li class="nav-item dropdown open" style="padding-left: 15px;">            
+                <a href="<?= base_url('index.php/main/dosen') ?>"><input style="border-radius: 3px; border: none; height: 23px; color: white; background: #2A3F54;" type="button" value="LOGIN"></a>
 
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                   <img src="images/img.jpg" alt=""> <?php echo $nama_user; ?>
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:;"> Profile</a>
-                  <a class="dropdown-item" href="#"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <a class="dropdown-item" href="index.php/login/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
           </nav>

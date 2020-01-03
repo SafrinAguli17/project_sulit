@@ -65,6 +65,7 @@
                                     <button type="submit" class="btn btn-success">Ajukan Judul</button>
                                 </div>
                             </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -29,6 +29,33 @@
 
   <!-- Custom Theme Style -->
   <link href="<?= base_url('assets/'); ?>build/css/custom.min.css" rel="stylesheet">
+
+  <!-- Jquery-UI -->
+  <link href="<?php echo base_url('assets/jquery-ui-1.10.0.custom.css'); ?>" rel="stylesheet">
+  <!-- Datatables -->
+  <link href="<?php echo base_url('assets/datatables.net-bs/css/dataTables.bootstrap.min.css'); ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/datatables.net-buttons-bs/css/buttons.bootstrap.min.css'); ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css'); ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/datatables.net-responsive-bs/css/responsive.bootstrap.min.css'); ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/datatables.net-scroller-bs/css/scroller.bootstrap.min.css'); ?>" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="<?php echo base_url('assets/jquery/dist/jquery.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/jquery/dist/jquery-ui-1.10.0.custom.min.js'); ?>"></script>
+
+  <!-- Datatables -->
+  <script src="<?php echo base_url('assets/datatables.net/js/jquery.dataTables.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-bs/js/dataTables.bootstrap.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-buttons/js/dataTables.buttons.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-buttons-bs/js/buttons.bootstrap.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-buttons/js/buttons.flash.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-buttons/js/buttons.html5.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-buttons/js/buttons.print.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-keytable/js/dataTables.keyTable.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-responsive/js/dataTables.responsive.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-responsive-bs/js/responsive.bootstrap.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/datatables.net-scroller/js/dataTables.scroller.min.js'); ?>"></script>
 </head>
 
 <body class="nav-md">
@@ -64,26 +91,26 @@
                 <li><a href="<?= base_url() ?>"><i class="fa fa-home"></i>Beranda</a></li>
                 <li><a href="<?= base_url('index.php/main/fitur_1') ?>"><i class="fa fa-edit"></i>Daftar Judul</a></li>
                 <?php
-                if ($this->session->userdata('level')=='Admin') {
-                  ?>                  
-                  <li><a href="<?= base_url('index.php/main/fitur_2') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
-                <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
-                <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
-                <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
-                <li><a><i class="fa fa-book"></i>Daftar Proposal</a></li>
-                <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
-                <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
-                <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
-                <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
-                <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi') ?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
-                <li><a href="<?php echo base_url('index.php/acc_pembimbing') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
-                <li><a><i class="fa fa-calendar"></i>Jadwal Seminar</a></li>
-                <li><a><i class="fa fa-sign-in"></i>Daftar Ujian</a></li>
-                <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
-                <li><a href="<?= base_url('index.php/set_penguji')?>"><i class="fa fa-check"></i>Set Penguji</a></li>
-                <li><a href="<?= base_url('index.php/set_penguji/jadwal_ujian')?>"><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
-                <li><a><i class="fa fa-book"></i>Hasil Ujian</a></li>
-                <?php }?>
+                if ($this->session->userdata('level') == 'Admin') {
+                ?>
+                  <li><a href="<?= base_url('index.php/mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
+                  <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
+                  <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
+                  <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
+                  <li><a><i class="fa fa-book"></i>Daftar Proposal</a></li>
+                  <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
+                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
+                  <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
+                  <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi') ?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
+                  <li><a href="<?php echo base_url('index.php/acc_pembimbing') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a><i class="fa fa-calendar"></i>Jadwal Seminar</a></li>
+                  <li><a><i class="fa fa-sign-in"></i>Daftar Ujian</a></li>
+                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a href="<?= base_url('index.php/set_penguji') ?>"><i class="fa fa-check"></i>Set Penguji</a></li>
+                  <li><a href="<?= base_url('index.php/set_penguji/jadwal_ujian') ?>"><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
+                  <li><a><i class="fa fa-book"></i>Hasil Ujian</a></li>
+                <?php } ?>
             </div>
 
           </div>
@@ -116,15 +143,24 @@
           </div>
           <nav class="nav navbar-nav">
             <ul class=" navbar-right">
-              <li class="nav-item dropdown open" style="padding-left: 15px;">            
-                <a href="<?= base_url('index.php/main/dosen') ?>"><input style="border-radius: 3px; border: none; height: 23px; color: white; background: #2A3F54;" type="button" value="LOGIN"></a>
+              <li class="nav-item dropdown open" style="padding-left: 15px;">
+                <?php
+                if ($this->session->userdata('level') == 'Admin') {
+                ?>
+                <?php } ?>
+                <?php
+                if ($this->session->userdata('level') == '') {
+                ?>
+                  <a href="<?= base_url('index.php/main/dosen') ?>"><input style="border-radius: 3px; border: none; height: 23px; color: white; background: #2A3F54;" type="button" value="LOGIN"></a>
+                <?php } ?>
+
 
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                   <img src="images/img.jpg" alt=""> <?php echo $nama_user; ?>
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:;"> Profile</a>
-                  <a class="dropdown-item" href="index.php/login/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <a class="dropdown-item" href="<?= base_url('index.php/login/logout')?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
           </nav>
@@ -133,7 +169,77 @@
       <!-- /top navigation -->
 
       <!-- page content -->
+
+      
+
       <?php echo $_content; ?>
+
+      <!-- Bootstrap modal -->
+      <div id="modal_form" class="modal fade bs-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="#" id="form" class="form-horizontal form-label-left">
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">NIM</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="hnpm" name="hnpm" type="hidden">
+                    <input id="nim" name="nim" placeholder="NPM" class="form-control" type="text" value="<?php echo set_value('nim'); ?>">
+                    <span id="npm_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">NAMA MAHASISWA</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="nama" name="nama" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('nama'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">EMAIL MAHASISWA</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="email" name="email" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('email'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">NO HP MAHASISWA</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="hp" name="hp" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('hp'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">JUDUL SKRIPSI</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="judul" name="judul" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('judul'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">Program Studi</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <?php $kode = "id='program_studi' name='program_studi' class='form-control'";
+                    echo form_dropdown('program_studi', $dd_program_studi, isset($default['dprogram_studi']) ? $default['dprogram_studi'] : '', $kode); ?>
+                    <span id="program_studi_error" class="text-danger"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnSave" onclick="save()" class="btn btn-primary" style="margin-left: 5px;margin-bottom: 0px;">Simpan</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Bootstrap modal -->
       <!-- /page content -->
 
       <!-- footer content -->
@@ -187,16 +293,22 @@
 
   <!-- Custom Theme Scripts -->
   <!-- <script src="./build/js/custom.min.js"></script> -->
-  <script src="<?= base_url('assets/'); ?>build/js/custom.min.js"></script>
-  <script src="<?php echo base_url() . 'assets/js/jquery-2.2.4.min.js' ?>"></script>
-  <script src="<?php echo base_url() . 'assets/js/bootstrap.js' ?>"></script>
+  <!-- <script src="<?= base_url('assets/'); ?>build/js/custom.min.js"></script> -->
+  <!-- <script src="<?php echo base_url() . 'assets/js/jquery-2.2.4.min.js' ?>"></script> -->
+  <!-- <script src="<?php echo base_url() . 'assets/js/bootstrap.js' ?>"></script> -->
   <script src="<?php echo base_url() . 'assets/js/jquery.dataTables.min.js' ?>"></script>
   <script src="<?php echo base_url() . 'assets/js/moment.js' ?>"></script>
-  <script>
+  <!-- <script>
     $(document).ready(function() {
       $('#mydata').DataTable();
     });
-  </script>
+  </script> -->
+
+
+
+
+
 </body>
+
 
 </html>

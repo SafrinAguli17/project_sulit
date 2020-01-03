@@ -15,7 +15,11 @@ class Main extends CI_Controller
     public function index()
     {
         $data['title'] = 'HALAMAN SKRIPSI';
-        $nama['nama_user'] = 'Pendaftar Skripsi';
+        // $judul['nama_judul'] = $data['user']['nama'];
+        $data['user'] = $this->db->get_where('user', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $nama['nama_user'] = $data['user']['nama'];
         $this->template->display('main/beranda', $data + $nama);
     }
     public function dosen()
@@ -70,7 +74,11 @@ class Main extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'HALAMAN SKRIPSI';
-            $nama['nama_user'] = 'Pendaftar Skripsi';
+
+            $data['user'] = $this->db->get_where('user', ['username' =>
+            $this->session->userdata('username')])->row_array();
+
+            $nama['nama_user'] = $data['user']['nama'];
             $this->template->display('mahasiswa/fitur_1', $data + $nama);
         } else {
             $kirim = [
@@ -89,14 +97,22 @@ class Main extends CI_Controller
     public function fitur_2()
     {
         $data['title'] = 'LIST PENDAFTAR';
-        $nama['nama_user'] = 'Pendaftar Skripsi';
-        $tabel_pendaftar['list_daftar'] = $this->m_list_pendaftar->show_list();
-        $this->template->display('Mahasiswa/fitur_2', $tabel_pendaftar + $data + $nama);
+        $data['user'] = $this->db->get_where('user', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $nama['nama_user'] = $data['user']['nama'];
+        // $tabel_pendaftar['list_daftar'] = $this->m_list_pendaftar->show_list();
+        $this->template->display('Mahasiswa/fitur_2', $data + $nama);
     }
     public function fitur_3()
     {
         $data['title'] = 'PERSETUJUAN JUDUL';
-        $nama['nama_user'] = 'Pendaftar Skripsi';
+        // JUDUL NAMA DARI DATABASE
+        $data['user'] = $this->db->get_where('user', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $nama['nama_user'] = $data['user']['nama'];
+        // AKHIR JUDUL NAMA
         $tabel_persetujuan['persetujuan_judul'] = $this->m_persetujuan_judul->show_list();
         $this->template->display('Dosen/v_persetujuan_judul', $tabel_persetujuan + $data + $nama);
     }

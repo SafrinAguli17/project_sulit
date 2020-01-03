@@ -11,13 +11,14 @@ class M_login extends CI_Model {
 	{
 		$login['username'] = $data['username'];
 		$login['password'] = $data['password'];
-		$cek = $this->db->get_where('tbl_login', $login);
+		$cek = $this->db->get_where('user', $login);
 		if($cek->num_rows()>0)
 		{
 			foreach($cek->result() as $qad)
 			{	
 				$sess_data['logged_in'] = 'yesGetMeLoginBaby';		
-				$sess_data['id'] = $qad->id;
+				$sess_data['nomor'] = $qad->id;
+				$sess_data['nama'] = $qad->username;
 				$sess_data['username'] = $qad->username;
 				$sess_data['level'] = $qad->level;
 				$sess_data['ip_address'] = $this->input->ip_address();

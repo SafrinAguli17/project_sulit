@@ -56,44 +56,7 @@ class Main extends CI_Controller
             $this->load->view('dosen/v_dosen', $judul + $nama);
         }
     }
-    public function fitur_1()
-    {
-        $this->form_validation->set_rules('nama', 'Nama', 'required|trim', [
-            'required' => 'Nama Harus di Isi'
-        ]);
-        $this->form_validation->set_rules('email_1', 'Email_1', 'required|trim|valid_email|is_unique[list_pendaftar.email]', [
-            'required' => 'Email Harus di Isi',
-            'is_unique' => 'Email Sudah Digunakan'
-        ]);
-        $this->form_validation->set_rules('hp', 'Hp', 'required|trim', [
-            'required' => 'Nama Harus di Isi'
-        ]);
-        $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
-            'required' => 'Nama Harus di Isi'
-        ]);
 
-        if ($this->form_validation->run() == false) {
-            $data['title'] = 'HALAMAN SKRIPSI';
-
-            $data['user'] = $this->db->get_where('user', ['username' =>
-            $this->session->userdata('username')])->row_array();
-
-            $nama['nama_user'] = $data['user']['nama'];
-            $this->template->display('mahasiswa/fitur_1', $data + $nama);
-        } else {
-            $kirim = [
-                'nim' => ($this->input->post('nim')),
-                'nama' => ($this->input->post('nama')),
-                'email' => ($this->input->post('email_1')),
-                'hp' => ($this->input->post('hp')),
-                'judul_skripsi' => ($this->input->post('judul')),
-                'draf' => ($this->input->post('draf')),
-                'time' => time()
-            ];
-            $this->db->insert('list_pendaftar', $kirim);
-            redirect('index.php/main/fitur_2');
-        }
-    }
     public function fitur_2()
     {
         $data['title'] = 'LIST PENDAFTAR';

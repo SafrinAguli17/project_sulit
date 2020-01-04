@@ -89,10 +89,32 @@
               <h3>General</h3>
               <ul class="nav side-menu">
                 <li><a href="<?= base_url() ?>"><i class="fa fa-home"></i>Beranda</a></li>
-                <li><a href="<?= base_url('index.php/main/fitur_1') ?>"><i class="fa fa-edit"></i>Daftar Judul</a></li>
                 <?php
-                if ($this->session->userdata('level') == 'Admin') {
+                if ($this->session->userdata('level') == '2') {
                 ?>
+                  <li><a href="<?= base_url('index.php/daftar_judul') ?>"><i class="fa fa-edit"></i>Daftar Judul</a></li>
+                  <li><a href="<?= base_url('index.php/daftar_mahasiswa') ?>"><i class=" fa fa-upload"></i>Daftarkan Mahasiswa</a></li>
+                  <li><a href="<?= base_url('index.php/mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
+                  <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
+                  <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
+                  <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
+                  <li><a><i class="fa fa-book"></i>Daftar Proposal</a></li>
+                  <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
+                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
+                  <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
+                  <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi') ?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
+                  <li><a href="<?php echo base_url('index.php/acc_pembimbing') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a><i class="fa fa-calendar"></i>Jadwal Seminar</a></li>
+                  <li><a><i class="fa fa-sign-in"></i>Daftar Ujian</a></li>
+                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a href="<?= base_url('index.php/set_penguji') ?>"><i class="fa fa-check"></i>Set Penguji</a></li>
+                  <li><a href="<?= base_url('index.php/set_penguji/jadwal_ujian') ?>"><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
+                  <li><a><i class="fa fa-book"></i>Hasil Ujian</a></li>
+
+                  <!-- ELSE IF -->
+
+                <?php } else if ($this->session->userdata('level') == '1') { ?>
                   <li><a href="<?= base_url('index.php/mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
                   <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
                   <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
@@ -160,7 +182,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:;"> Profile</a>
-                  <a class="dropdown-item" href="<?= base_url('index.php/login/logout')?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <a class="dropdown-item" href="<?= base_url('index.php/login/logout') ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
           </nav>
@@ -170,7 +192,7 @@
 
       <!-- page content -->
 
-      
+
 
       <?php echo $_content; ?>
 

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Mahasiswa extends CI_Controller
+class Skripsi extends CI_Controller
 {
 
 
@@ -10,7 +10,7 @@ class Mahasiswa extends CI_Controller
         parent::__construct();
         $this->load->library('template');
         $this->load->helper('url');
-        $this->load->model('mahasiswa_model', 'mahasiswa');
+        $this->load->model('Skripsi_Model', 'mahasiswa');
     }
 
     public function index()
@@ -21,11 +21,7 @@ class Mahasiswa extends CI_Controller
         $this->session->userdata('username')])->row_array();
 
         $nama['nama_user'] = $data['user']['nama'];
-        // AKHIR JUDUL NAMA
-        $data['status'] = '';
-
-        // data untuk dropdown menu 
-        $data['dd_program_studi'] = $this->mahasiswa->get_program_studi();
+        // AKHIR JUDUL NAMA 
 
 
         $this->template->display('mahasiswa/tes', $nama + $data);
@@ -45,17 +41,19 @@ class Mahasiswa extends CI_Controller
             $row[] = $mahasiswa->email;
             $row[] = $mahasiswa->hp;
             $row[] = $mahasiswa->judul_skripsi;
+            $row[] = $mahasiswa->draf;
+            $row[] = $mahasiswa->status;
             $row[] = "<div class='btn-group'>                      
                       <button type='button' class='btn btn-danger dropdown-toggle btn-xs' data-toggle='dropdown' aria-expanded='false'>
                         <span class='caret'></span>
                         <span class='sr-only'>Toggle Dropdown</span>
                       </button>
                       <ul class='dropdown-menu pull-right' role='menu'>
-                        <li><a href='javascript:void(0)' title='View' onclick='view_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>View</a>
+                        <li><a href='javascript:void(0)' title='View' onclick='view_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>VIEW MORE</a>
                         </li>
-                        <li><a href='javascript:void(0)' title='Edit' onclick='edit_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>Edit</a>
+                        <li><a href='javascript:void(0)' title='Edit' onclick='edit_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>PERSETUJUAN</a>
                         </li>
-                        <li><a href='javascript:void(0)' title='Delete' onclick='delete_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>Delete</a>
+                        <li><a href='javascript:void(0)' title='Delete' onclick='delete_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>HAPUS MAHASISWA</a>
                         </li>
                       </ul>
                     </div>";
@@ -124,6 +122,7 @@ class Mahasiswa extends CI_Controller
             'email' => $this->input->post('email'),
             'hp' => $this->input->post('hp'),
             'judul_skripsi' => $this->input->post('judul'),
+            'status' => $this->input->post('status_drop'),
             // 'program_studi' => $this->input->post('program_studi')
         );
         $this->mahasiswa->update($data, array('nim' => $this->input->post('hnpm')));

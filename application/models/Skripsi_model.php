@@ -1,11 +1,11 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Mahasiswa_Model extends CI_Model
+class Skripsi_Model extends CI_Model
 {
 
     var $table = 'list_pendaftar';
-    var $column_order = array('nim', 'nama', 'email', 'hp', 'judul_skripsi');
-    var $column_search = array('nim', 'nama', 'email', 'hp', 'judul_skripsi');
+    var $column_order = array('nim', 'nama', 'email', 'hp', 'judul_skripsi', 'status');
+    var $column_search = array('nim', 'nama', 'email', 'hp', 'judul_skripsi', 'status');
     var $order = array('nim' => 'asc');
 
     function __construct()
@@ -95,18 +95,5 @@ class Mahasiswa_Model extends CI_Model
     {
         $this->db->where('nim', $id);
         $this->db->delete($this->table);
-    }
-
-    public function get_program_studi()
-    {
-        $this->db->from('tbl_program_studi');
-        $result = $this->db->get();
-        $dd['-'] = 'SILAHKAN PILIH';
-        if ($result->num_rows() > 0) {
-            foreach ($result->result() as $row) {
-                $dd[$row->program_studi] = $row->nama_program_studi;
-            }
-        }
-        return $dd;
     }
 }

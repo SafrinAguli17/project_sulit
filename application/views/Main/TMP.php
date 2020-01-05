@@ -94,7 +94,7 @@
                 ?>
                   <li><a href="<?= base_url('index.php/daftar_judul') ?>"><i class="fa fa-edit"></i>Daftar Judul</a></li>
                   <li><a href="<?= base_url('index.php/daftar_mahasiswa') ?>"><i class=" fa fa-upload"></i>Daftarkan Mahasiswa</a></li>
-                  <li><a href="<?= base_url('index.php/mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
+                  <li><a href="<?= base_url('index.php/Skripsi') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
                   <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
                   <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
                   <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
@@ -115,7 +115,8 @@
                   <!-- ELSE IF -->
 
                 <?php } else if ($this->session->userdata('level') == '1') { ?>
-                  <li><a href="<?= base_url('index.php/mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
+                  <li><a href="<?= base_url('index.php/daftar_judul') ?>"><i class="fa fa-edit"></i>Daftar Judul</a></li>
+                  <li><a href="<?= base_url('index.php/Skripsi') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
                   <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
                   <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
                   <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
@@ -226,29 +227,44 @@
                 <div class="form-group">
                   <label class="control-label col-md-10 col-sm-10 col-xs-10">EMAIL MAHASISWA</label>
                   <div class="col-md-7 col-sm-7 col-xs-7">
-                    <input id="email" name="email" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('email'); ?>">
+                    <input id="email" name="email" placeholder="Email Mahasiswa" class="form-control" type="text" value="<?php echo set_value('email'); ?>">
                     <span id="nama_error" class="text-danger"></span>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-md-10 col-sm-10 col-xs-10">NO HP MAHASISWA</label>
                   <div class="col-md-7 col-sm-7 col-xs-7">
-                    <input id="hp" name="hp" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('hp'); ?>">
+                    <input id="hp" name="hp" placeholder="Nomor Handphone" class="form-control" type="text" value="<?php echo set_value('hp'); ?>">
                     <span id="nama_error" class="text-danger"></span>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-md-10 col-sm-10 col-xs-10">JUDUL SKRIPSI</label>
                   <div class="col-md-7 col-sm-7 col-xs-7">
-                    <input id="judul" name="judul" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('judul'); ?>">
+                    <input id="judul" name="judul" placeholder="Judul Skripsi" class="form-control" type="text" value="<?php echo set_value('judul'); ?>">
                     <span id="nama_error" class="text-danger"></span>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-md-10 col-sm-10 col-xs-10">Program Studi</label>
+                <!-- <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">STATUS</label>
                   <div class="col-md-7 col-sm-7 col-xs-7">
-                    <?php $kode = "id='program_studi' name='program_studi' class='form-control'";
-                    echo form_dropdown('program_studi', $dd_program_studi, isset($default['dprogram_studi']) ? $default['dprogram_studi'] : '', $kode); ?>
+                    <input id="status" name="status" placeholder="Status Judul" class="form-control" type="text" value="<?php echo set_value('status'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">Status Penerimaan Judul</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <!-- <?php $kode = "id='program_studi' name='program_studi' class='form-control'";
+                          echo form_dropdown('program_studi', $dd_program_studi, isset($default['dprogram_studi']) ? $default['dprogram_studi'] : '', $kode); ?> -->
+
+                    <select name="status_drop" id="status_drop" class="form-control">
+                      <option value="- MENUNGGU -">- MENUNGGU -</option>
+                      <option value="DI TERIMA">JUDUL DI TERIMA</option>
+                      <option value="REVISI">REVISI</option>
+                      <option value="DI TOLAK">JUDUL DI TOLAK</option>
+                    </select>
+
                     <span id="program_studi_error" class="text-danger"></span>
                   </div>
                 </div>

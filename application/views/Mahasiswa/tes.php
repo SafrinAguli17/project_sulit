@@ -2,18 +2,15 @@
 	<div class="">
 		<div class="page-title">
 			<div class="page-title-actions">
-				<div class="d-inline-block dropdown">
-					<button type="button" class="btn-shadow btn btn-primary" onclick="add_mahasiswa()"><i class='fa fa-plus-circle'></i>Tambah
-					</button>
-				</div>
+
 			</div>
-			<div class="col-sm-12" >
+			<div class="col-sm-12">
 				<div class="main-card mb-3 card">
 					<div class="card-body" style="width: 100%; border-radius: 5px; border-style: none;">
-						<h5 class="card-title">Table striped</h5>
+						<h5 class="card-title">LIST PENDAFTAR</h5>
 
 						<table id="table" class="table table-striped table-bordered dataTable no-footer" style="width: 100%; border-radius: 5px; border-style: none;" role="grid" aria-describedby="datatable_info">
-							<thead >
+							<thead>
 								<tr role="row" class="odd" style="width: 100%; border-radius: 5px; border-style: none;">
 									<th>No</th>
 									<th>NIM</th>
@@ -21,7 +18,7 @@
 									<th>EMAIL</th>
 									<th>HP</th>
 									<th>JUDUL SKRIPSI</th>
-									<th width="20">Aksi</th>
+									<th width="20">DRAFT</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -48,7 +45,7 @@
 
 						// Load data for the table's content from an Ajax source
 						"ajax": {
-							"url": "<?php echo site_url('index.php/mahasiswa/ajax_list') ?>",
+							"url": "<?php echo site_url('index.php/Skripsi/ajax_list') ?>",
 							"type": "POST"
 						},
 
@@ -91,7 +88,7 @@
 
 					//Ajax Load data from ajax
 					$.ajax({
-						url: "<?php echo site_url('index.php/mahasiswa/ajax_edit/') ?>/" + id,
+						url: "<?php echo site_url('index.php/Skripsi/ajax_edit/') ?>/" + id,
 						type: "GET",
 						dataType: "JSON",
 						success: function(data) {
@@ -122,7 +119,7 @@
 
 					//Ajax Load data from ajax
 					$.ajax({
-						url: "<?php echo site_url('index.php/mahasiswa/ajax_edit/') ?>/" + id,
+						url: "<?php echo site_url('index.php/Skripsi/ajax_edit/') ?>/" + id,
 						type: "GET",
 						dataType: "JSON",
 						success: function(data) {
@@ -148,9 +145,9 @@
 					var url;
 
 					if (save_method == 'add') {
-						url = "<?php echo site_url('index.php/mahasiswa/ajax_add') ?>";
+						url = "<?php echo site_url('index.php/Skripsi/ajax_add') ?>";
 					} else {
-						url = "<?php echo site_url('index.php/mahasiswa/ajax_update') ?>";
+						url = "<?php echo site_url('index.php/Skripsi/ajax_update') ?>";
 					}
 
 					// ajax adding data to database
@@ -186,7 +183,7 @@
 					if (confirm('Are you sure delete this data?')) {
 						// ajax delete data to database
 						$.ajax({
-							url: "<?php echo site_url('index.php/mahasiswa/ajax_delete/') ?>" + id,
+							url: "<?php echo site_url('index.php/Skripsi/ajax_delete/') ?>" + id,
 							type: "POST",
 							dataType: "JSON",
 							success: function(data) {

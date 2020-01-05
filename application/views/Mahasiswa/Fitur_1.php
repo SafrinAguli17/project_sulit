@@ -15,19 +15,19 @@
                     <div class="x_content">
                         <br>
                         <!-- <form class="form-horizontal form-label-left" method="post" action="<?= base_url('index.php/daftar_judul'); ?>"> -->
-                        <?php echo form_open_multipart('index.php/daftar_judul/upload_draf') ?>
+                        <?php echo form_open_multipart('index.php/daftar_judul/upload_draf/') ?>
 
                         <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">NIM </label>
                             <div class="col-md-6 col-sm-6 ">
                                 <!-- <input type="text" id="first-name" required="required" class="form-control "> -->
-                                <input type="text" class="form-control" id="nim" name="nim" placeholder="NIM MAHASISWA" value="<?php echo $nim_; ?>">
+                                <input type="text" id="nim1" name="nim1" class="form-control" value="<?php echo $nn; ?>">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NAMA LENGKAP </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="text" id="nama" name="nama" class="form-control" value="<?php echo $nama_; ?>">
+                                <input type="text" id="nama" name="nama" class="form-control" value="<?php echo $nama_user; ?>">
                                 <?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                                 <medium>doc|docx|pdf|txt</medium>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="file" id="draf" name="draf">
+                                <input type="file" id="draf1" name="draf1">
                             </div>
                         </div>
                         <div class="ln_solid"></div>

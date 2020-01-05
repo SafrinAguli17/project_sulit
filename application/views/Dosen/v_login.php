@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login Dosen </title>
+    <title>Login</title>
 
     <!-- Bootstrap -->
     <link href="<?= base_url('assets/'); ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,25 +31,25 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                <?php echo form_open('index.php/login/login_app');?>
-                        <h1>Login Dosen</h1>
-                        <div>
-                            <?= form_error('username', '<small class="text-danger pl-3">', '</small>') ?>
-                            <input type="text" class="form-control" placeholder="Username" id="username" name="username">
+                    <?php echo form_open('index.php/login/login_app'); ?>
+                    <h1>Login Disini</h1>
+                    <div>
+                        <?= form_error('username', '<small class="text-danger pl-3">', '</small>') ?>
+                        <input type="text" class="form-control" placeholder="Username" id="username" name="username">
 
-                        </div>
-                        <div>
-                            <?= form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
-                            <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
+                    </div>
+                    <div>
+                        <?= form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
+                        <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
 
-                        </div>
-                        <div>
-                            <button type=" submit" class="btn btn-primary btn-user btn-block">
-                                LOGIN
-                            </button>
-                            <a class="btn btn-primary btn-user btn-block" style="text-decoration: none; text-shadow: none;" href="<?= base_url('') ?>">Back Dasboard</a>
-                        </div>
-                    <?php echo form_close()?>
+                    </div>
+                    <div>
+                        <button type=" submit" class="btn btn-primary btn-user btn-block">
+                            LOGIN
+                        </button>
+                        <a class="btn btn-primary btn-user btn-block" style="text-decoration: none; text-shadow: none;" href="<?= base_url('') ?>">Back Dasboard</a>
+                    </div>
+                    <?php echo form_close() ?>
                 </section>
             </div>
 

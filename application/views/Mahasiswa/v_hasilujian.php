@@ -1,24 +1,23 @@
-<div class="right_col" role="main" style="min-height: 1164px;>
-       <br />
-       <div class="row">
-          <div class="col-md-12 col-sm-4 ">
-            <div class="x_panel">
-              <div class="x_title">
-              <h2>HASIL UJIAN SKRIPSI</h2>
-              <ul class="nav navbar-right panel_toolbox">
-                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                  </li>
-                  <li><a class="close-link"><i class="fa fa-close"></i></a>
-                  </li>
-                </ul>
-                <div class="clearfix"></div>
-              </div>
-              <div class="x_content">
-                <div class="dashboard-widget-content">
-      <table stytle="margin=20px auto;" border="1" >
+<div class="right_col" role="main" style="min-height: 1164px;">
+    <div class="">
+        <div class="page-title">
+
+
+
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                    <h2>Set Penguji</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content"> 
+                    <table class="table table-hover table-striped" id="mydata">
       <tr>
           <td>No</td>
           <td>Nama Mahasiswa</td>

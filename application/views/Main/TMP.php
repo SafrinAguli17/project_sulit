@@ -96,18 +96,18 @@
                   <li><a href="<?= base_url('index.php/daftar_mahasiswa') ?>"><i class=" fa fa-upload"></i>Daftarkan Mahasiswa</a></li>
                   <li><a href="<?= base_url('index.php/Skripsi') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
                   <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
-                  <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
-                  <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
-                  <li><a><i class="fa fa-book"></i>Daftar Proposal</a></li>
+                  <li><a href="<?= base_url('index.php/Set_Pembimbing') ?>"><i class="fa fa-user"></i>Set Pembimbing</a></li>
+                  <li><a href="<?= base_url('index.php/list_mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
+                  <li><a href="<?php echo base_url('index.php/daftar_proposal') ?>"><i class="fa fa-book"></i>Daftar Proposal</a></li>
                   <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
                   <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
                   <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
                   <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
                   <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi') ?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
                   <li><a href="<?php echo base_url('index.php/acc_pembimbing') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
-                  <li><a href="<?php echo base_url('index.php/C_jadwalseminar/jadwal_seminar') ?>"><i class="fa fa-calendar"></i>Jadwal Seminar</a></li>
-                  <li><a href="<?php echo base_url('index.php/C_daftarujian') ?>"><i class="fa fa-sign-in"></i>Daftar Ujian</a></li>
-                  <li><a href="<?= base_url('index.php/C_acc') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a><i class="fa fa-calendar"></i>Jadwal Seminar</a></li>
+                  <li><a><i class="fa fa-sign-in"></i>Daftar Ujian</a></li>
+                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
                   <li><a href="<?= base_url('index.php/set_penguji') ?>"><i class="fa fa-check"></i>Set Penguji</a></li>
                   <li><a href="<?= base_url('index.php/set_penguji/jadwal_ujian') ?>"><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
                   <li><a><i class="fa fa-book"></i>Hasil Ujian</a></li>
@@ -118,9 +118,9 @@
                   <li><a href="<?= base_url('index.php/daftar_judul') ?>"><i class="fa fa-edit"></i>Daftar Judul</a></li>
                   <li><a href="<?= base_url('index.php/Skripsi') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
                   <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
-                  <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
-                  <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
-                  <li><a><i class="fa fa-book"></i>Daftar Proposal</a></li>
+                  <!-- <li><a href="<?= base_url('index.php/Set_Pembimbing') ?>"><i class="fa fa-user"></i>Set Pembimbing</a></li> -->
+                  <li><a href="<?= base_url('index.php/list_mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
+                  <li><a href="<?php echo base_url('index.php/daftar_proposal') ?>"><i class="fa fa-book"></i>Daftar Proposal</a></li>
                   <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
                   <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
                   <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
@@ -130,9 +130,9 @@
                   <li><a><i class="fa fa-calendar"></i>Jadwal Seminar</a></li>
                   <li><a><i class="fa fa-sign-in"></i>Daftar Ujian</a></li>
                   <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
-                  <li><a href="<?= base_url('index.php/set_penguji')?>"><i class="fa fa-check"></i>Set Penguji</a></li>
-                <li><a href="<?= base_url('index.php/set_penguji/jadwal_ujian')?>"><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
-                <li><a href="<?= base_url('index.php/set_penguji/hasilujian')?>"><i class="fa fa-book"></i>Hasil Ujian</a></li>
+                  <li><a href="<?= base_url('index.php/set_penguji') ?>"><i class="fa fa-check"></i>Set Penguji</a></li>
+                  <li><a href="<?= base_url('index.php/set_penguji/jadwal_ujian') ?>"><i class="fa fa-calendar"></i>Jadwal Ujian</a></li>
+                  <li><a><i class="fa fa-book"></i>Hasil Ujian</a></li>
                 <?php } ?>
             </div>
 

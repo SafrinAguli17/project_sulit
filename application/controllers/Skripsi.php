@@ -99,6 +99,7 @@ class Skripsi extends CI_Controller
                 'email' => $this->input->post('email'),
                 'hp' => $this->input->post('hp'),
                 'judul_skripsi' => $this->input->post('judul'),
+                'pembimbing' => $this->input->post('pembimbing'),
                 // 'program_studi' => $this->input->post('program_studi')
             );
             $insert = $this->mahasiswa->save($data);

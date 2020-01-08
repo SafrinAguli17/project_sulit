@@ -21,36 +21,23 @@
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">NIM </label>
                             <div class="col-md-6 col-sm-6 ">
                                 <!-- <input type="text" id="first-name" required="required" class="form-control "> -->
-                                <input type="text" id="nim1" name="nim1" class="form-control" value="<?php echo $nn; ?>">
+                                <input type="text" id="nim1" name="nim1" class="form-control" value="<?php echo $nn; ?>" readonly>
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NAMA LENGKAP </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="text" id="nama" name="nama" class="form-control" value="<?php echo $nama_user; ?>">
+                                <input type="text" id="nama" name="nama" class="form-control" value="<?php echo $nama_user; ?>" readonly>
                                 <?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
                             </div>
-                        </div>
-                        <div class="item form-group">
-                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">EMAIL AKTIF</label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input id="email_1" name="email_1" class="form-control" type="email">
-                                <?= form_error('email_1', '<small class="text-danger pl-3">', '</small>') ?>
-                            </div>
-                        </div>
-                        <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NO HP/TELEPHONE </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input type="text" id="hp" name="hp" class="form-control">
-                                <?= form_error('hp', '<small class="text-danger pl-3">', '</small>') ?>
-                            </div>
-                        </div>
+                        </div>                      
                         <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL SKRIPSI </label>
                             <div class="col-md-6 col-sm-6 ">
                                 <!-- <input type="text" id="judul" name="judul" required="required" class="form-control"> -->
-                                <textarea class="form-control" id="judul" name="judul" rows="3" placeholder="Tulis Judul Skripsi Disini"></textarea>
+                                <textarea class="form-control" id="judul" name="judul" rows="3" placeholder="Tulis Judul Skripsi Disini" readonly><?php foreach($judul as $get){echo $get->judul_skripsi;}?></textarea>
                                 <?= form_error('judul', '<small class="text-danger pl-3">', '</small>') ?>
+                                
                             </div>
                         </div>
 
@@ -59,7 +46,7 @@
                         <div class="item form-group">
                             <div class="col-md-6 col-sm-6 offset-md-3">
                                 <button class="btn btn-primary" type="reset">Reset</button>
-                                <button type="submit" class="btn btn-success">Ajukan Judul</button>
+                                <button type="submit" class="btn btn-success">Daftar</button>
                             </div>
                         </div>
                         <?php echo form_close() ?>

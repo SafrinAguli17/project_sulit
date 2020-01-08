@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jan 2020 pada 05.33
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Waktu pembuatan: 07 Jan 2020 pada 06.26
+-- Versi server: 10.1.31-MariaDB
+-- Versi PHP: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `web-akhir`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `acc`
+--
+
+CREATE TABLE `acc` (
+  `npm` int(30) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `Tgl` varchar(30) NOT NULL,
+  `judul` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -42,6 +55,18 @@ INSERT INTO `dosen` (`NIK`, `nama_dosen`) VALUES
 ('3501732801', 'fajriyan nur'),
 ('786028915', 'rosiful aqli'),
 ('8376281608', 'siti zulaikhah');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `jadwal_seminar`
+--
+
+CREATE TABLE `jadwal_seminar` (
+  `npm` int(30) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `judul` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -138,6 +163,12 @@ INSERT INTO `user` (`nomor`, `nama`, `username`, `password`, `level`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `acc`
+--
+ALTER TABLE `acc`
+  ADD PRIMARY KEY (`npm`);
 
 --
 -- Indeks untuk tabel `list_pendaftar`

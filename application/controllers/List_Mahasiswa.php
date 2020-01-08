@@ -1,16 +1,15 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Skripsi extends CI_Controller
+class List_Mahasiswa extends CI_Controller
 {
-
-
+   
     function __construct()
     {
         parent::__construct();
         $this->load->library('template');
         $this->load->helper('url');
-        $this->load->model('Skripsi_Model', 'mahasiswa');
+        $this->load->model('m_list_mahasiswa', 'mahasiswa');
     }
 
     public function index()
@@ -24,9 +23,8 @@ class Skripsi extends CI_Controller
         // AKHIR JUDUL NAMA 
 
 
-        $this->template->display('mahasiswa/tes', $nama + $data);
+        $this->template->display('mahasiswa/v_list_mahasiswa', $nama + $data);
     }
-
     public function ajax_list()
     {
         $list = $this->mahasiswa->get_datatables();
@@ -36,29 +34,27 @@ class Skripsi extends CI_Controller
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $mahasiswa->nim;
+            $row[] = $mahasiswa->npm;
             $row[] = $mahasiswa->nama;
-            $row[] = $mahasiswa->email;
-            $row[] = $mahasiswa->hp;
-            $row[] = $mahasiswa->judul_skripsi;
-            $row[] = $mahasiswa->draf;
-            $row[] = $mahasiswa->status;
-            $row[] = "<div class='btn-group'>                      
-                      <button type='button' class='btn btn-danger dropdown-toggle btn-xs' data-toggle='dropdown' aria-expanded='false'>
-                        <span class='caret'></span>
-                        <span class='sr-only'>Toggle Dropdown</span>
-                      </button>
-                      <ul class='dropdown-menu pull-right' role='menu'>
-                        <li><a href='javascript:void(0)' title='View' onclick='view_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>VIEW MORE</a>
-                        </li>
-                        <li><a href='javascript:void(0)' title='Edit' onclick='edit_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>PERSETUJUAN</a>
-                        </li>
-                        <li><a href='javascript:void(0)' title='Delete' onclick='delete_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>HAPUS MAHASISWA</a>
-                        </li>
-                      </ul>
-                    </div>";
-            //add html for action
-            $data[] = $row;
+            $row[] = $mahasiswa->alamat;
+            $row[] = $mahasiswa->no;
+           
+            // $row[] = "<div class='btn-group'>                      
+            //           <button type='button' class='btn btn-danger dropdown-toggle btn-xs' data-toggle='dropdown' aria-expanded='false'>
+            //             <span class='caret'></span>
+            //             <span class='sr-only'>Toggle Dropdown</span>
+            //           </button>
+            //           <ul class='dropdown-menu pull-right' role='menu'>
+            //             <li><a href='javascript:void(0)' title='View' onclick='view_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>VIEW MORE</a>
+            //             </li>
+            //             <li><a href='javascript:void(0)' title='Edit' onclick='edit_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>PERSETUJUAN</a>
+            //             </li>
+            //             <li><a href='javascript:void(0)' title='Delete' onclick='delete_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>HAPUS MAHASISWA</a>
+            //             </li>
+            //           </ul>
+            //         </div>";
+            // add html for action
+            // $data[] = $row;
         }
 
         $output = array(
@@ -84,14 +80,14 @@ class Skripsi extends CI_Controller
             'required'      => '%s Harus Di Isi Yaa'
         ));
         $this->form_validation->set_rules('nama', 'Nama Mahasiswa', 'required|alpha');
-        // // $this->form_validation->set_rules(
-        // //     'program_studi',
-        // //     'Program Studi',
-        // //     'required|is_natural',
-        // //     array(
-        // //         'required'      => 'Harus Di Isi Yaa %s.'
-        // //     )
-        // );
+        $this->form_validation->set_rules(
+            'program_studi',
+            'Program Studi',
+            'required|is_natural',
+            array(
+                'required'      => 'Harus Di Isi Yaa %s.'
+            )
+        );
         if ($this->form_validation->run()) {
             $data = array(
                 'nim' => $this->input->post('nim'),
@@ -99,7 +95,6 @@ class Skripsi extends CI_Controller
                 'email' => $this->input->post('email'),
                 'hp' => $this->input->post('hp'),
                 'judul_skripsi' => $this->input->post('judul'),
-                'pembimbing' => $this->input->post('pembimbing'),
                 // 'program_studi' => $this->input->post('program_studi')
             );
             $insert = $this->mahasiswa->save($data);

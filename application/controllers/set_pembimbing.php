@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Skripsi extends CI_Controller
+class Set_Pembimbing extends CI_Controller
 {
 
 
@@ -24,7 +24,7 @@ class Skripsi extends CI_Controller
         // AKHIR JUDUL NAMA 
 
 
-        $this->template->display('mahasiswa/tes', $nama + $data);
+        $this->template->display('dosen/v_set_pembimbing', $nama + $data);
     }
 
     public function ajax_list()
@@ -43,6 +43,7 @@ class Skripsi extends CI_Controller
             $row[] = $mahasiswa->judul_skripsi;
             $row[] = $mahasiswa->draf;
             $row[] = $mahasiswa->status;
+            $row[] = $mahasiswa->pembimbing;
             $row[] = "<div class='btn-group'>                      
                       <button type='button' class='btn btn-danger dropdown-toggle btn-xs' data-toggle='dropdown' aria-expanded='false'>
                         <span class='caret'></span>
@@ -84,14 +85,14 @@ class Skripsi extends CI_Controller
             'required'      => '%s Harus Di Isi Yaa'
         ));
         $this->form_validation->set_rules('nama', 'Nama Mahasiswa', 'required|alpha');
-        // // $this->form_validation->set_rules(
-        // //     'program_studi',
-        // //     'Program Studi',
-        // //     'required|is_natural',
-        // //     array(
-        // //         'required'      => 'Harus Di Isi Yaa %s.'
-        // //     )
-        // );
+        $this->form_validation->set_rules(
+            'program_studi',
+            'Program Studi',
+            'required|is_natural',
+            array(
+                'required'      => 'Harus Di Isi Yaa %s.'
+            )
+        );
         if ($this->form_validation->run()) {
             $data = array(
                 'nim' => $this->input->post('nim'),
@@ -99,7 +100,6 @@ class Skripsi extends CI_Controller
                 'email' => $this->input->post('email'),
                 'hp' => $this->input->post('hp'),
                 'judul_skripsi' => $this->input->post('judul'),
-                'pembimbing' => $this->input->post('pembimbing'),
                 // 'program_studi' => $this->input->post('program_studi')
             );
             $insert = $this->mahasiswa->save($data);

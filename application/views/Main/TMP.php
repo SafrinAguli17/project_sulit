@@ -99,7 +99,7 @@
                   <li><a href="<?= base_url('index.php/Set_Pembimbing') ?>"><i class="fa fa-user"></i>Set Pembimbing</a></li>
                   <li><a href="<?= base_url('index.php/list_mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
                   <li><a href="<?php echo base_url('index.php/daftar_proposal') ?>"><i class="fa fa-book"></i>Daftar Proposal</a></li>
-                  <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
+                  <li><a href="<?php echo base_url('index.php/List_Proposal_helmi') ?>"><i class="fa fa-list-ol"></i>List Proposal</a></li>
                   <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
                   <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
                   <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
@@ -121,7 +121,7 @@
                   <!-- <li><a href="<?= base_url('index.php/Set_Pembimbing') ?>"><i class="fa fa-user"></i>Set Pembimbing</a></li> -->
                   <li><a href="<?= base_url('index.php/list_mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
                   <li><a href="<?php echo base_url('index.php/daftar_proposal') ?>"><i class="fa fa-book"></i>Daftar Proposal</a></li>
-                  <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
+                  <li><a href="<?php echo base_url('index.php/List_Proposal_helmi') ?>"><i class="fa fa-list-ol"></i>List Proposal</a></li>
                   <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
                   <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
                   <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>

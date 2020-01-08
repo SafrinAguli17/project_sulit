@@ -15,36 +15,7 @@
                     <div class="x_content">
                         <br>
                         <!-- <form class="form-horizontal form-label-left" method="post" action="<?= base_url('index.php/daftar_judul'); ?>"> -->
-                        <?php echo form_open_multipart('index.php/daftar_judul/upload_draf/') ?>
-
-                        <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">NIM </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <!-- <input type="text" id="first-name" required="required" class="form-control "> -->
-                                <input type="text" id="nim1" name="nim1" class="form-control" value="<?php echo $nn; ?>">
-                            </div>
-                        </div>
-                        <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NAMA LENGKAP </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input type="text" id="nama" name="nama" class="form-control" value="<?php echo $nama_user; ?>">
-                                <?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
-                            </div>
-                        </div>
-                        <div class="item form-group">
-                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">EMAIL AKTIF</label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input id="email_1" name="email_1" class="form-control" type="email">
-                                <?= form_error('email_1', '<small class="text-danger pl-3">', '</small>') ?>
-                            </div>
-                        </div>
-                        <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NO HP/TELEPHONE </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input type="text" id="hp" name="hp" class="form-control">
-                                <?= form_error('hp', '<small class="text-danger pl-3">', '</small>') ?>
-                            </div>
-                        </div>
+                        <?php echo form_open_multipart('index.php/daftar_proposal/upload_draf/') ?>
                         <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL PROPOSAL </label>
                             <div class="col-md-6 col-sm-6 ">

@@ -12,9 +12,14 @@ class Acc_Pembimbing extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'HALAMAN SKRIPSI';
-        $nama['nama_user'] = 'Pendaftar Skripsi';
-        $x['data'] = $this->m_acc_pembimbing->show_list();
-        $this->template->display('Dosen/v_acc_pembimbing', $x + $data + $nama);
+        $data['title'] = 'Acc Pembimbing';
+        // JUDUL NAMA DARI DATABASE
+        $data['user'] = $this->db->get_where('user', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $nama['nama_user'] = $data['user']['nama'];
+        // AKHIR JUDUL NAMA
+        $tabel_persetujuan['persetujuan_judul'] = $this->m_acc_pembimbing->show_list();
+        $this->template->display('Dosen/v_acc_pembimbing', $tabel_persetujuan + $data + $nama);
     }
 }

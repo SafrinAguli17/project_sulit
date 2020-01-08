@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class M_List_Proposal extends CI_Model{
 	
 	function show_list(){
-		 $hasil=$this->db->query("select * from mahasiswa");
+		 $hasil=$this->db->query("select * from list_pendaftar");
 		return $hasil;
     }
 }

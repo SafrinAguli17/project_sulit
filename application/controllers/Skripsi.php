@@ -84,14 +84,14 @@ class Skripsi extends CI_Controller
             'required'      => '%s Harus Di Isi Yaa'
         ));
         $this->form_validation->set_rules('nama', 'Nama Mahasiswa', 'required|alpha');
-        $this->form_validation->set_rules(
-            'program_studi',
-            'Program Studi',
-            'required|is_natural',
-            array(
-                'required'      => 'Harus Di Isi Yaa %s.'
-            )
-        );
+        // // $this->form_validation->set_rules(
+        // //     'program_studi',
+        // //     'Program Studi',
+        // //     'required|is_natural',
+        // //     array(
+        // //         'required'      => 'Harus Di Isi Yaa %s.'
+        // //     )
+        // );
         if ($this->form_validation->run()) {
             $data = array(
                 'nim' => $this->input->post('nim'),

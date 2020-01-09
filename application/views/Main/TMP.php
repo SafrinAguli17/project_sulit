@@ -96,12 +96,21 @@
                   <li><a href="<?= base_url('index.php/daftar_mahasiswa') ?>"><i class=" fa fa-upload"></i>Daftarkan Mahasiswa</a></li>
                   <li><a href="<?= base_url('index.php/Skripsi') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
                   <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
+<<<<<<< HEAD
                   <li><a href="<?= base_url('index.php/Set_Pembimbing') ?>"><i class="fa fa-user"></i>Set Pembimbing</a></li>
                   <li><a href="<?= base_url('index.php/list_mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
                   <li><a href="<?php echo base_url('index.php/daftar_proposal') ?>"><i class="fa fa-book"></i>Daftar Proposal</a></li>
                   <li><a href="<?php echo base_url('index.php/List_Proposal3') ?>"><i class="fa fa-list-ol"></i>List Proposal</a></li>
                   <li><a href="<?php echo base_url('index.php/Acc_proposal') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
                   <li><a href="<?php echo base_url('index.php/Pesetujuan_proposal') ?>"><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
+=======
+                  <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
+                  <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
+                  <li><a><i class="fa fa-book"></i>Daftar Proposal</a></li>
+                  <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
+                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
+>>>>>>> f3d1dea4c5d8a25a03419359571226af7560e39e
                   <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
                   <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi') ?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
                   <li><a href="<?php echo base_url('index.php/acc_pembimbing') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
@@ -118,12 +127,21 @@
                   <li><a href="<?= base_url('index.php/daftar_judul') ?>"><i class="fa fa-edit"></i>Daftar Judul</a></li>
                   <li><a href="<?= base_url('index.php/Skripsi') ?>"><i class="fa fa-list-ol"></i>List Pendaftar</span></a></li>
                   <li><a href="<?= base_url('index.php/main/fitur_3') ?>"><i class="fa fa-check-circle"></i>Persetujuan</a></li>
+<<<<<<< HEAD
                   <!-- <li><a href="<?= base_url('index.php/Set_Pembimbing') ?>"><i class="fa fa-user"></i>Set Pembimbing</a></li> -->
                   <li><a href="<?= base_url('index.php/list_mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
                   <li><a href="<?php echo base_url('index.php/daftar_proposal') ?>"><i class="fa fa-book"></i>Daftar Proposal</a></li>
                   <li><a href="<?php echo base_url('index.php/List_Proposal3') ?>"><i class="fa fa-list-ol"></i>List Proposal</a></li>
                   <!-- <li><a href="<?php echo base_url('index.php/Acc_proposal') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li> -->
                   <li><a href="<?php echo base_url('index.php/Pesetujuan_proposal') ?>"><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
+=======
+                  <li><a><i class="fa fa-user"></i>Set Pembimbing</a></li>
+                  <li><a><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
+                  <li><a><i class="fa fa-book"></i>Daftar Proposal</a></li>
+                  <li><a><i class="fa fa-list-ol"></i>List Proposal</a></li>
+                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
+>>>>>>> f3d1dea4c5d8a25a03419359571226af7560e39e
                   <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
                   <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi') ?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
                   <li><a href="<?php echo base_url('index.php/acc_pembimbing') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
@@ -279,8 +297,14 @@
       </div>
       <!-- End Bootstrap modal -->
 
+<<<<<<< HEAD
       <!-- Bootstrap modal -->
       <div id="modal_form3" class="modal fade bs-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+=======
+      
+      <!-- Bootstrap modal -->
+      <div id="modal_accpembimbing" class="modal fade bs-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+>>>>>>> f3d1dea4c5d8a25a03419359571226af7560e39e
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -290,7 +314,11 @@
               </button>
             </div>
             <div class="modal-body">
+<<<<<<< HEAD
               <form action="#" id="form3" class="form-horizontal form-label-left">
+=======
+              <form action="#" id="form1" class="form-horizontal form-label-left">
+>>>>>>> f3d1dea4c5d8a25a03419359571226af7560e39e
                 <div class="form-group">
                   <label class="control-label col-md-10 col-sm-10 col-xs-10">NIM</label>
                   <div class="col-md-7 col-sm-7 col-xs-7">
@@ -307,6 +335,7 @@
                   </div>
                 </div>
                 <div class="form-group">
+<<<<<<< HEAD
                   <label class="control-label col-md-10 col-sm-10 col-xs-10">JUDUL SKRIPSI</label>
                   <div class="col-md-7 col-sm-7 col-xs-7">
                     <input id="judul" name="judul" placeholder="Judul Skripsi" class="form-control" type="text" value="<?php echo set_value('judul'); ?>">
@@ -389,6 +418,45 @@
                       <option value="DI TERIMA">PROPOSAL DI TERIMA</option>
                       <option value="REVISI">REVISI</option>
                       <option value="DI TOLAK">PROPOSAL DI TOLAK</option>
+=======
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">EMAIL MAHASISWA</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="email" name="email" placeholder="Email Mahasiswa" class="form-control" type="text" value="<?php echo set_value('email'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">NO HP MAHASISWA</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="hp" name="hp" placeholder="Nomor Handphone" class="form-control" type="text" value="<?php echo set_value('hp'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">JUDUL SKRIPSI</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="judul" name="judul" placeholder="Judul Skripsi" class="form-control" type="text" value="<?php echo set_value('judul'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">STATUS</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="status" name="status" placeholder="Status Judul" class="form-control" type="text" value="<?php echo set_value('status'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">Status Seminar Hasil Skripsi</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <!-- <?php $kode = "id='program_studi' name='program_studi' class='form-control'";
+                          echo form_dropdown('program_studi', $dd_program_studi, isset($default['dprogram_studi']) ? $default['dprogram_studi'] : '', $kode); ?> -->
+
+                    <select name="status_drop" id="status_drop" class="form-control">
+                      <option value="- MENUNGGU -">- MENUNGGU -</option>
+                      <option value="DI TERIMA">DI TERIMA</option>                      
+                      <option value="DI TOLAK">DI TOLAK</option>
+>>>>>>> f3d1dea4c5d8a25a03419359571226af7560e39e
                     </select>
 
                     <span id="program_studi_error" class="text-danger"></span>
@@ -404,7 +472,10 @@
         </div>
       </div>
       <!-- End Bootstrap modal -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> f3d1dea4c5d8a25a03419359571226af7560e39e
       <!-- /page content -->
 
       <!-- footer content -->

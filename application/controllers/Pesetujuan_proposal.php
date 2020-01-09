@@ -1,15 +1,16 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class List_Proposal_Helmi extends CI_Controller
+class Pesetujuan_proposal extends CI_Controller
 {
-   
+
+
     function __construct()
     {
         parent::__construct();
         $this->load->library('template');
         $this->load->helper('url');
-        $this->load->model('m_list_mahasiswa', 'mahasiswa');
+        $this->load->model('M_List_Proposal3', 'mahasiswa');
     }
 
     public function index()
@@ -23,8 +24,9 @@ class List_Proposal_Helmi extends CI_Controller
         // AKHIR JUDUL NAMA 
 
 
-        $this->template->display('mahasiswa/v_list_mahasiswa', $nama + $data);
+        $this->template->display('dosen/v_persetujuan_proposal', $nama + $data);
     }
+
     public function ajax_list()
     {
         $list = $this->mahasiswa->get_datatables();
@@ -34,27 +36,29 @@ class List_Proposal_Helmi extends CI_Controller
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $mahasiswa->npm;
+            $row[] = $mahasiswa->nim;
             $row[] = $mahasiswa->nama;
-            $row[] = $mahasiswa->alamat;
-            $row[] = $mahasiswa->no;
-           
-            // $row[] = "<div class='btn-group'>                      
-            //           <button type='button' class='btn btn-danger dropdown-toggle btn-xs' data-toggle='dropdown' aria-expanded='false'>
-            //             <span class='caret'></span>
-            //             <span class='sr-only'>Toggle Dropdown</span>
-            //           </button>
-            //           <ul class='dropdown-menu pull-right' role='menu'>
-            //             <li><a href='javascript:void(0)' title='View' onclick='view_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>VIEW MORE</a>
-            //             </li>
-            //             <li><a href='javascript:void(0)' title='Edit' onclick='edit_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>PERSETUJUAN</a>
-            //             </li>
-            //             <li><a href='javascript:void(0)' title='Delete' onclick='delete_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>HAPUS MAHASISWA</a>
-            //             </li>
-            //           </ul>
-            //         </div>";
-            // add html for action
-            // $data[] = $row;
+            $row[] = $mahasiswa->email;
+            $row[] = $mahasiswa->hp;
+            $row[] = $mahasiswa->judul_skripsi;
+            $row[] = $mahasiswa->status;
+            $row[] = $mahasiswa->judul_proposal;
+            $row[] = $mahasiswa->draf_proposal;
+            $row[] = $mahasiswa->status_proposal;
+            $row[] = "<div class='btn-group'>                      
+                      <button type='button' class='btn btn-danger dropdown-toggle btn-xs' data-toggle='dropdown' aria-expanded='false'>
+                        <span class='caret'></span>
+                        <span class='sr-only'>Toggle Dropdown</span>
+                      </button>
+                      <ul class='dropdown-menu pull-right' role='menu'>
+                        <li><a href='javascript:void(0)' title='View' onclick='view_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>VIEW MORE</a>
+                        </li>
+                        <li><a href='javascript:void(0)' title='Edit' onclick='edit_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>PERSETUJUAN</a>
+                        </li>
+                      </ul>
+                    </div>";
+            //add html for action
+            $data[] = $row;
         }
 
         $output = array(
@@ -95,6 +99,7 @@ class List_Proposal_Helmi extends CI_Controller
                 'email' => $this->input->post('email'),
                 'hp' => $this->input->post('hp'),
                 'judul_skripsi' => $this->input->post('judul'),
+                'pembimbing' => $this->input->post('pembimbing'),
                 // 'program_studi' => $this->input->post('program_studi')
             );
             $insert = $this->mahasiswa->save($data);

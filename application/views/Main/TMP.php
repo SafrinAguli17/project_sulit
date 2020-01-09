@@ -99,9 +99,9 @@
                   <li><a href="<?= base_url('index.php/Set_Pembimbing') ?>"><i class="fa fa-user"></i>Set Pembimbing</a></li>
                   <li><a href="<?= base_url('index.php/list_mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
                   <li><a href="<?php echo base_url('index.php/daftar_proposal') ?>"><i class="fa fa-book"></i>Daftar Proposal</a></li>
-                  <li><a href="<?php echo base_url('index.php/List_Proposal_helmi') ?>"><i class="fa fa-list-ol"></i>List Proposal</a></li>
-                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
-                  <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
+                  <li><a href="<?php echo base_url('index.php/List_Proposal3') ?>"><i class="fa fa-list-ol"></i>List Proposal</a></li>
+                  <li><a href="<?php echo base_url('index.php/Acc_proposal') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
+                  <li><a href="<?php echo base_url('index.php/Pesetujuan_proposal') ?>"><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
                   <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
                   <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi') ?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
                   <li><a href="<?php echo base_url('index.php/acc_pembimbing') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
@@ -121,9 +121,9 @@
                   <!-- <li><a href="<?= base_url('index.php/Set_Pembimbing') ?>"><i class="fa fa-user"></i>Set Pembimbing</a></li> -->
                   <li><a href="<?= base_url('index.php/list_mahasiswa') ?>"><i class="fa fa-list-ol"></i>List Mahasiswa</a></li>
                   <li><a href="<?php echo base_url('index.php/daftar_proposal') ?>"><i class="fa fa-book"></i>Daftar Proposal</a></li>
-                  <li><a href="<?php echo base_url('index.php/List_Proposal_helmi') ?>"><i class="fa fa-list-ol"></i>List Proposal</a></li>
-                  <li><a><i class="fa fa-check"></i>ACC Pembimbing</a></li>
-                  <li><a><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
+                  <li><a href="<?php echo base_url('index.php/List_Proposal3') ?>"><i class="fa fa-list-ol"></i>List Proposal</a></li>
+                  <!-- <li><a href="<?php echo base_url('index.php/Acc_proposal') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li> -->
+                  <li><a href="<?php echo base_url('index.php/Pesetujuan_proposal') ?>"><i class="fa fa-bookmark"></i>Persetujuan Proposal</a></li>
                   <li><a href="<?php echo base_url('index.php/list_proposal') ?>"><i class="fa fa-tasks"></i>List Proposal Disetujui</a></li>
                   <li><a href="<?php echo base_url('index.php/form_seminar_hasil_skripsi') ?>"><i class="fa fa-sticky-note"></i>Daftar Seminar Hasil Skripsi</a></li>
                   <li><a href="<?php echo base_url('index.php/acc_pembimbing') ?>"><i class="fa fa-check"></i>ACC Pembimbing</a></li>
@@ -278,6 +278,133 @@
         </div>
       </div>
       <!-- End Bootstrap modal -->
+
+      <!-- Bootstrap modal -->
+      <div id="modal_form3" class="modal fade bs-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="#" id="form3" class="form-horizontal form-label-left">
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">NIM</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="hnpm" name="hnpm" type="hidden">
+                    <input id="nim" name="nim" placeholder="NPM" class="form-control" type="text" value="<?php echo set_value('nim'); ?>">
+                    <span id="npm_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">NAMA MAHASISWA</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="nama" name="nama" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('nama'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">JUDUL SKRIPSI</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="judul" name="judul" placeholder="Judul Skripsi" class="form-control" type="text" value="<?php echo set_value('judul'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">STATUS</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="status" name="status" placeholder="Status Judul" class="form-control" type="text" value="<?php echo set_value('status'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">Status Penerimaan Judul</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <!-- <?php $kode = "id='program_studi' name='program_studi' class='form-control'";
+                          echo form_dropdown('program_studi', $dd_program_studi, isset($default['dprogram_studi']) ? $default['dprogram_studi'] : '', $kode); ?> -->
+
+                    <select name="pembimbing" id="pembimbing" class="form-control">
+                      <option value="- MENUNGGU -">- MENUNGGU -</option>
+                      <option value="PAK ABDUL AZIZ">PAK ABDUL AZIZ</option>
+                      <option value="PAK WAHYUDI">PAK WAHYUDI</option>
+                      <option value="PAK AMAK">PAK AMAK</option>
+                    </select>
+
+                    <span id="program_studi_error" class="text-danger"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnSave" onclick="save()" class="btn btn-primary" style="margin-left: 5px;margin-bottom: 0px;">Simpan</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Bootstrap modal -->
+
+      <!-- Bootstrap modal -->
+      <div id="modal_form4" class="modal fade bs-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="#" id="form4" class="form-horizontal form-label-left">
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">NIM</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="hnpm" name="hnpm" type="hidden">
+                    <input id="nim" name="nim" placeholder="NPM" class="form-control" type="text" value="<?php echo set_value('nim'); ?>">
+                    <span id="npm_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">NAMA MAHASISWA</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="nama" name="nama" placeholder="Nama Mahasiswa" class="form-control" type="text" value="<?php echo set_value('nama'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">JUDUL PROPOSAL</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <input id="judul_proposal" name="judul_proposal" placeholder="Judul Proposal" class="form-control" type="text" value="<?php echo set_value('judul'); ?>">
+                    <span id="nama_error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-10 col-sm-10 col-xs-10">STATUS PROPOSAL</label>
+                  <div class="col-md-7 col-sm-7 col-xs-7">
+                    <select name="status_proposal1" id="status_proposal1" class="form-control">
+                      <option value="- MENUNGGU -">- MENUNGGU -</option>
+                      <option value="DI TERIMA">PROPOSAL DI TERIMA</option>
+                      <option value="REVISI">REVISI</option>
+                      <option value="DI TOLAK">PROPOSAL DI TOLAK</option>
+                    </select>
+
+                    <span id="program_studi_error" class="text-danger"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnSave" onclick="save()" class="btn btn-primary" style="margin-left: 5px;margin-bottom: 0px;">Simpan</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Bootstrap modal -->
+
       <!-- /page content -->
 
       <!-- footer content -->

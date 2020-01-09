@@ -1,11 +1,11 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class M_list_mahasiswa extends CI_Model
+class M_list_proposal3 extends CI_Model
 {
 
     var $table = 'list_pendaftar';
-    var $column_order = array('nim', 'nama', 'email', 'hp', 'judul_skripsi', 'draf', 'status', 'pembimbing');
-    var $column_search = array('nim', 'nama', 'email', 'hp', 'judul_skripsi', 'draf', 'status', 'pembimbing');
+    var $column_order = array('nim', 'nama', 'email', 'hp', 'judul_skripsi', 'status', 'judul_proposal', 'draf_proposal', 'status_proposal');
+    var $column_search = array('nim', 'nama', 'email', 'hp', 'judul_skripsi', 'status', 'judul_proposal', 'draf_proposal', 'status_proposal');
     var $order = array('nim' => 'asc');
 
     function __construct()
@@ -73,7 +73,7 @@ class M_list_mahasiswa extends CI_Model
     public function get_by_id($id)
     {
         $this->db->from($this->table);
-        $this->db->where('npm', $id);
+        $this->db->where('nim', $id);
         $query = $this->db->get();
 
         return $query->row();
@@ -93,7 +93,7 @@ class M_list_mahasiswa extends CI_Model
 
     public function delete_by_id($id)
     {
-        $this->db->where('npm', $id);
+        $this->db->where('nim', $id);
         $this->db->delete($this->table);
     }
 }

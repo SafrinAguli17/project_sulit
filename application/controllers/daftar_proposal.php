@@ -28,22 +28,22 @@ class Daftar_Proposal extends CI_Controller
                 'judul_proposal' => ($this->input->post('judul')),
                 'draf_proposal' => ($this->input->post('draf') . ('||') . ($this->input->post('nama'))
                     . ('||') . ($this->input->post('nim1')))
-               
+
             ];
             // $this->db->insert('list_pendaftar', $kirim);
             $data['user'] = $this->db->get_where('user', ['username' =>
-                $this->session->userdata('username')])->row_array();
-                $nama123=$data['user']['nomor'];
+            $this->session->userdata('username')])->row_array();
+            $nama123 = $data['user']['nomor'];
 
-                $where = array('nim' => $nama123);
-                $this->db->where($where);
-                $this->db->update('list_pendaftar',$kirim);
+            $where = array('nim' => $nama123);
+            $this->db->where($where);
+            $this->db->update('list_pendaftar', $kirim);
             // var_dump($where);
         }
     }
     public function upload_draf()
     {
-        $config['upload_path']          = './uploads/draf';
+        $config['upload_path']          = './uploads/draft_proposal';
         $config['allowed_types']        = 'doc|docx|pdf|txt';
         $config['max_size']             = 0;
         // $config['max_width']            = 1024;
@@ -59,7 +59,7 @@ class Daftar_Proposal extends CI_Controller
             $nama['nama_user'] = $data['user']['nama'];
             $this->template->display('mahasiswa/fitur_1', $data2 +  $nama1 + $nama + $error);
         } else {
-            
+
             $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
                 'required' => 'Nama Harus di Isi'
             ]);
@@ -74,17 +74,17 @@ class Daftar_Proposal extends CI_Controller
                 $kirim = [
                     'judul_proposal' => ($this->input->post('judul')),
                     'draf_proposal' => $upload_data['file_name'] . ('||') . $this->input->post('nim1')
-                   
+
                 ];
 
                 // $this->db->insert('list_pendaftar', $kirim);
-                 $data['user'] = $this->db->get_where('user', ['username' =>
+                $data['user'] = $this->db->get_where('user', ['username' =>
                 $this->session->userdata('username')])->row_array();
-                $nama123=$data['user']['nomor'];
+                $nama123 = $data['user']['nomor'];
 
                 $where = array('nim' => $nama123);
                 $this->db->where($where);
-                $this->db->update('list_pendaftar',$kirim);
+                $this->db->update('list_pendaftar', $kirim);
                 redirect('index.php/list_proposal_helmi');
             }
         }

@@ -42,6 +42,7 @@ class Daftar_Judul extends CI_Controller
                 'judul_skripsi' => ($this->input->post('judul')),
                 'draf' => ($this->input->post('draf') . ('||') . ($this->input->post('nama'))
                     . ('||') . ($this->input->post('nim1'))),
+                'status' => ('- MENUNGGU -'),
                 'time' => time()
             ];
             $this->db->insert('list_pendaftar', $kirim);
@@ -94,6 +95,7 @@ class Daftar_Judul extends CI_Controller
                     'hp' => ($this->input->post('hp')),
                     'judul_skripsi' => ($this->input->post('judul')),
                     'draf' => $upload_data['file_name'] . ('||') . $this->input->post('nim1'),
+                    'status' => ('- MENUNGGU -'),
                     'time' => time()
                 ];
                 $this->db->insert('list_pendaftar', $kirim);

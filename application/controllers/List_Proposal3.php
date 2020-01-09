@@ -1,20 +1,21 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class List_Mahasiswa extends CI_Controller
+class List_Proposal3 extends CI_Controller
 {
+
 
     function __construct()
     {
         parent::__construct();
         $this->load->library('template');
         $this->load->helper('url');
-        $this->load->model('m_list_mahasiswa', 'mahasiswa');
+        $this->load->model('M_List_Proposal3', 'mahasiswa');
     }
 
     public function index()
     {
-        $data['title'] = 'LIST MAHASISWA';
+        $data['title'] = 'HALAMAN SKRIPSI';
         // JUDUL NAMA DARI DATABASE
         $data['user'] = $this->db->get_where('user', ['username' =>
         $this->session->userdata('username')])->row_array();
@@ -23,8 +24,9 @@ class List_Mahasiswa extends CI_Controller
         // AKHIR JUDUL NAMA 
 
 
-        $this->template->display('mahasiswa/v_list_mahasiswa', $nama + $data);
+        $this->template->display('mahasiswa/v_list_proposal3', $nama + $data);
     }
+
     public function ajax_list()
     {
         $list = $this->mahasiswa->get_datatables();
@@ -39,25 +41,26 @@ class List_Mahasiswa extends CI_Controller
             $row[] = $mahasiswa->email;
             $row[] = $mahasiswa->hp;
             $row[] = $mahasiswa->judul_skripsi;
-            $row[] = $mahasiswa->draf;
             $row[] = $mahasiswa->status;
-            $row[] = $mahasiswa->pembimbing;
-            // $row[] = "<div class='btn-group'>                      
-            //           <button type='button' class='btn btn-danger dropdown-toggle btn-xs' data-toggle='dropdown' aria-expanded='false'>
-            //             <span class='caret'></span>
-            //             <span class='sr-only'>Toggle Dropdown</span>
-            //           </button>
-            //           <ul class='dropdown-menu pull-right' role='menu'>
-            //             <li><a href='javascript:void(0)' title='View' onclick='view_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>VIEW MORE</a>
-            //             </li>
-            //             <li><a href='javascript:void(0)' title='Edit' onclick='edit_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>PERSETUJUAN</a>
-            //             </li>
-            //             <li><a href='javascript:void(0)' title='Delete' onclick='delete_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>HAPUS MAHASISWA</a>
-            //             </li>
-            //           </ul>
-            //         </div>";
-            // add html for action
-            // $data[] = $row;
+            $row[] = $mahasiswa->judul_proposal;
+            $row[] = $mahasiswa->draf_proposal;
+            $row[] = $mahasiswa->status_proposal;
+            $row[] = "<div class='btn-group'>                      
+                      <button type='button' class='btn btn-danger dropdown-toggle btn-xs' data-toggle='dropdown' aria-expanded='false'>
+                        <span class='caret'></span>
+                        <span class='sr-only'>Toggle Dropdown</span>
+                      </button>
+                      <ul class='dropdown-menu pull-right' role='menu'>
+                        <li><a href='javascript:void(0)' title='View' onclick='view_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>VIEW MORE</a>
+                        </li>
+                        <li><a href='javascript:void(0)' title='Edit' onclick='edit_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>PERSETUJUAN</a>
+                        </li>
+                        <li><a href='javascript:void(0)' title='Delete' onclick='delete_mahasiswa(" . '"' . $mahasiswa->nim . '"' . ")'>HAPUS MAHASISWA</a>
+                        </li>
+                      </ul>
+                    </div>";
+            //add html for action
+            $data[] = $row;
         }
 
         $output = array(
@@ -116,11 +119,6 @@ class List_Mahasiswa extends CI_Controller
     public function ajax_update()
     {
         $data = array(
-            'nim' => $this->input->post('nim'),
-            'nama' => $this->input->post('nama'),
-            'email' => $this->input->post('email'),
-            'hp' => $this->input->post('hp'),
-            'judul_skripsi' => $this->input->post('judul'),
             'status' => $this->input->post('status_drop'),
             // 'program_studi' => $this->input->post('program_studi')
         );

@@ -118,12 +118,7 @@ class Set_Pembimbing extends CI_Controller
     public function ajax_update()
     {
         $data = array(
-            'nim' => $this->input->post('nim'),
-            'nama' => $this->input->post('nama'),
-            'email' => $this->input->post('email'),
-            'hp' => $this->input->post('hp'),
-            'judul_skripsi' => $this->input->post('judul'),
-            'status' => $this->input->post('status_drop'),
+            'pembimbing' => $this->input->post('pembimbing'),
             // 'program_studi' => $this->input->post('program_studi')
         );
         $this->mahasiswa->update($data, array('nim' => $this->input->post('hnpm')));

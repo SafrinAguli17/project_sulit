@@ -16,7 +16,7 @@
 			<div class="col-sm-12">
 				<div class="main-card mb-3 card">
 					<div class="card-body" style="width: 100%; border-radius: 5px; border-style: none;">
-						<h5 class="card-title">SET PEMBIMBING</h5>
+						<h5 class="card-title">LIST PROPOSAL</h5>
 
 						<table id="table" class="table table-striped table-bordered dataTable no-footer" style="width: 100%; border-radius: 5px; border-style: none;" role="grid" aria-describedby="datatable_info">
 							<thead>
@@ -27,13 +27,14 @@
 									<th>EMAIL</th>
 									<th>HP</th>
 									<th>JUDUL SKRIPSI</th>
-									<th>DRAF</th>
-									<th>STATUS</th>
-									<th>PEMBIMBING</th>
+									<th>STATUS JUDUL</th>
+									<th>JUDUL PROPOSAL</th>
+									<th>DRAFT PROPOSAL</th>
+
 									<?php
 									if ($this->session->userdata('level') == '2') {
 									?>
-										<th width="20">Aksi</th>
+
 									<?php } ?>
 								</tr>
 							</thead>
@@ -61,7 +62,7 @@
 
 						// Load data for the table's content from an Ajax source
 						"ajax": {
-							"url": "<?php echo site_url('index.php/set_pembimbing/ajax_list') ?>",
+							"url": "<?php echo site_url('index.php/List_proposal3/ajax_list') ?>",
 							"type": "POST"
 						},
 
@@ -88,23 +89,23 @@
 				function add_mahasiswa() {
 					save_method = 'add';
 					reset_eror();
-					$('#form3')[0].reset(); // reset form on modals
+					$('#form')[0].reset(); // reset form on modals
 					$('.form-group').removeClass('has-error'); // clear error class
 					$('.help-block').empty(); // clear error string
-					$('#modal_form3').modal('show'); // show bootstrap modal when complete loaded
+					$('#modal_form').modal('show'); // show bootstrap modal when complete loaded
 					$('.modal-title').text('Tambah Mahasiswa'); // Set title to Bootstrap modal title   
 				}
 
 				function edit_mahasiswa(id) {
 					save_method = 'update';
 					reset_eror();
-					$('#form3')[0].reset(); // reset form on modals
+					$('#form')[0].reset(); // reset form on modals
 					$('.form-group').removeClass('has-error'); // clear error class
 					$('.help-block').empty(); // clear error string
 
 					//Ajax Load data from ajax
 					$.ajax({
-						url: "<?php echo site_url('index.php/set_pembimbing/ajax_edit/') ?>/" + id,
+						url: "<?php echo site_url('index.php/Skripsi/ajax_edit/') ?>/" + id,
 						type: "GET",
 						dataType: "JSON",
 						success: function(data) {
@@ -116,7 +117,7 @@
 							$('[name="judul"]').val(data.judul_skripsi);
 							// $('[name="status"]').val(data.status);
 							$('[name="status_drop"]').val(data.status);
-							$('#modal_form3').modal('show'); // show bootstrap modal when complete loaded
+							$('#modal_form').modal('show'); // show bootstrap modal when complete loaded
 							$('.modal-title').text('Edit Mahasiswa'); // Set title to Bootstrap modal title
 
 						},
@@ -130,13 +131,13 @@
 					save_method = 'update';
 					reset_eror();
 					$('#btnSave').attr('disabled', true);
-					$('#form3')[0].reset(); // reset form on modals
+					$('#form')[0].reset(); // reset form on modals
 					$('.form-group').removeClass('has-error'); // clear error class
 					$('.help-block').empty(); // clear error string
 
 					//Ajax Load data from ajax
 					$.ajax({
-						url: "<?php echo site_url('index.php/set_pembimbing/ajax_edit/') ?>/" + id,
+						url: "<?php echo site_url('index.php/Skripsi/ajax_edit/') ?>/" + id,
 						type: "GET",
 						dataType: "JSON",
 						success: function(data) {
@@ -148,7 +149,7 @@
 							$('[name="status"]').val(data.status);
 							$('[name="judul"]').val(data.judul_skripsi);
 							$('[name="status_drop"]').val(data.status);
-							$('#modal_form3').modal('show'); // show bootstrap modal when complete loaded
+							$('#modal_form').modal('show'); // show bootstrap modal when complete loaded
 							$('.modal-title').text('View Mahasiswa'); // Set title to Bootstrap modal title
 
 						},
@@ -164,21 +165,21 @@
 					var url;
 
 					if (save_method == 'add') {
-						url = "<?php echo site_url('index.php/set_pembimbing/ajax_add') ?>";
+						url = "<?php echo site_url('index.php/Skripsi/ajax_add') ?>";
 					} else {
-						url = "<?php echo site_url('index.php/set_pembimbing/ajax_update') ?>";
+						url = "<?php echo site_url('index.php/Skripsi/ajax_update') ?>";
 					}
 
 					// ajax adding data to database
 					$.ajax({
 						url: url,
 						type: "POST",
-						data: $('#form3').serialize(),
+						data: $('#form').serialize(),
 						dataType: "JSON",
 						success: function(data) {
 							if (data.status) //if success close modal and reload ajax table
 							{
-								$('#modal_form3').modal('hide');
+								$('#modal_form').modal('hide');
 								reload_table();
 							} else {
 								$('#npm_error').html(data.npm_error);
@@ -202,12 +203,12 @@
 					if (confirm('Are you sure delete this data?')) {
 						// ajax delete data to database
 						$.ajax({
-							url: "<?php echo site_url('index.php/set_pembimbing/ajax_delete/') ?>" + id,
+							url: "<?php echo site_url('index.php/Skripsi/ajax_delete/') ?>" + id,
 							type: "POST",
 							dataType: "JSON",
 							success: function(data) {
 								//if success reload ajax table
-								$('#modal_form3').modal('hide');
+								$('#modal_form').modal('hide');
 								reload_table();
 							},
 							error: function(jqXHR, textStatus, errorThrown) {

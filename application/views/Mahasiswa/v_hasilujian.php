@@ -12,38 +12,51 @@
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                    <h2>Set Penguji</h2>
+                    <h2>HASIL UJIAN</h2>
 
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content"> 
                     <table class="table table-hover table-striped" id="mydata">
-      <tr>
-          <td>No</td>
-          <td>Nama Mahasiswa</td>
-          <td>Nilai</td>
-      </tr>
+
+
+                     
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Komponen Penilaian</th>
+          <th>Nilai</th>
+          </tr>
+      </thead>
+      <tbody>
+        <?php 
+        foreach($data->result_array() as $row):
+          $nilai1=$row['nilai1'];
+          $nilai2=$row['nilai2'];
+          $nilai3=$row['nilai3'];
+      ?>
       <tr>
           <td>1</td>
-          <td>Mr. X</td>
-          <td> . . . </td>
+          <td>efektifitas pada pendahuluan</td>
+          <td><?php echo $nilai1;  ?></td>
           </tr>
       <tr>
           <td>2</td>
-          <td>Mr. Y</td>
-          <td> . . . </td>
+          <td>metodologi dan konten teknis</td>
+          <td><?php echo $nilai2; ?></td>
       </tr>
       <tr>
           <td>3</td>
-          <td>Mr. Z</td>
-          <td> . . . </td>
+          <td>sikap saat presentasi</td>
+          <td><?php echo $nilai3; ?> </td>
       </tr>
+      </tbody>
+    <?php endforeach; ?>
 
-
-      </table>
       <br/>
-      <input style="border-radius: 4px; border: none; height: 23px; color: white; background: #2A3F54;" 
-      type="button" value="PRINT">
+      <!-- <input style="border-radius: 4px; border: none; height: 23px; color: white; background: #2A3F54;" 
+      type="button" value="PRINT"> -->
+      <a href="<?= base_url('index.php/Y_hasilujian/cetakhasilujian');?>"><button class="btn btn-success" >CETAK</button></a>
       </div>
       </div>
           </div>
